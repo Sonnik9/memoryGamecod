@@ -1,96 +1,89 @@
+let countCard = 0;
+let flagCard = false;
+let firstCard;
+let secondCard;
 
 let cards = document.querySelectorAll('.memory-card');
+let startButton = document.querySelector('.start');
+startButton.addEventListener('click', restartGame);
 
-// let arrCard = [];
-let countCard = 0;
+cards.forEach(card => card.addEventListener('click', flipCard, { once: true }));
 
-let flagCardEqual = false;
-let flagCardUnEqual = false;
-
-let firstCard;
-let secondCard,
-    antyDoudle = false;
-
-
-// cards.forEach(card =>
-//   arrCard.push(card),
-//   // 
-  
-// );
-
-cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-
-
-// (function shuffle() {
-//     cards.forEach(card => {
-//       let randomPos = Math.floor(Math.random() * 12);
-//       card.style.order = randomPos;
-//     });
-//   })();
-
+function shuffle() {
+        cards.forEach(card => {
+          let randomPos = Math.floor(Math.random() * 12);
+          card.style.order = randomPos;
+        });
+}
+shuffle();
+      
 function flipCard() { 
-  // let countCardElse = 0;  
-  // countCardElse++;     
-  // if(this.dataset.ind !== countCardElse) {
-    
-    countCard++;
-
+  countCard++;
+ 
+  if(countCard == 1) {
+    this.classList.add('flip');
+    firstCard = this;
+  }
   
-  if(countCard == 2) {   
+  else if(countCard == 2) {   
     this.classList.add('flip');
     secondCard = this;
-    console.log(secondCard + 'sec');
+    
     if (firstCard.dataset.name == secondCard.dataset.name) {
-      disableCards(); 
-      flagCardEqual = true;
-      // console.log(firstCard + 'first');
+      resetBoard();
+      flagCard = true;
     }
     else {
-      flagCardEqual = false;
-      // console.log(firstCard + 'first');
-
-    }    
+      flagCard = false;
+    }       
+    
   }
-  else if (flagCardEqual == false && countCard == 3) {
+  else if (flagCard == false && countCard == 3) {
+    restartListener();
     unflipCards();
     this.classList.add('flip');
     firstCard = this;
     countCard = 1;
-    // console.log(firstCard + 'first');
   }
 
-  else if (flagCardEqual == true && countCard == 3) { 
-    disableCards();
+  else if (flagCard == true && countCard == 3) { 
+    resetBoard();
     this.classList.add('flip'); 
     firstCard = this;
     countCard = 1;
-    flagCardEqual = false;
-  }
-
-  else if(countCard == 1) {
-    this.classList.add('flip');
-    firstCard = this;
-    console.log(firstCard + 'first'); 
-    console.log('djdjdjdj')   
-  }
-
-  // if(countCardElse ==2)
-  //   countCardElse = 0;
-  // console.log(countCardElse) 
-    
+    flagCard = false;
+  }    
 }
 
-function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
+function resetBoard() {
+firstCard = null;
+secondCard = null;
+}
+
+function restartListener() {
+firstCard.addEventListener('click', flipCard, { once: true });
+secondCard.addEventListener('click', flipCard, { once: true });
 }
 
 function unflipCards() { 
-  firstCard.classList.remove('flip');
-  secondCard.classList.remove('flip');     
+firstCard.classList.remove('flip');
+secondCard.classList.remove('flip');     
+}  
+  
+function restartGame() {
+    countCard = 0;
+    flagCard = false;
+    cards.forEach(card => card.addEventListener('click', flipCard, { once: true }));
+    cards.forEach(card => card.classList.remove('flip'));
+    shuffle();
 }
+
+
+
+
+
+
+
 
 
 

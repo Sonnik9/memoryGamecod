@@ -6,170 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory</title>
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./main.js"></script>
+    
+    <script defer src="./easyLevel.js"></script>    
+    <script defer src="./middleLevel.js"></script>
+    <script defer src="./advanceLevel.js"></script>
+    <script defer src="./main.js"></script>    
+    <script defer src="./select.js"></script>
+  
 </head>
 
 <body>
+  <div class="memo-container">
 
     <section class="memory-game">
-        <!-- <div class="memory-card">
-          <img class="front-face" src="img/aurelia.svg"/>
-          <img class="back-face" src="img/js-badge.svg"/>
-        </div>
-        <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-    
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-    
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-    
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-    
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-    
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div>
-          <div class="memory-card">
-            <img class="front-face" src="img/aurelia.svg"/>
-            <img class="back-face" src="img/js-badge.svg"/>
-          </div> -->
 
-          <div class="memory-card" data-ind="1" data-name="one">
-            <img class="front-face" src="./имж карточки/1ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind="2" data-name="one">
-            <img class="front-face" src="./имж карточки/1ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-      
-          <div class="memory-card" data-ind="1" data-name="two">
-            <img class="front-face" src="./имж карточки/2ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind="2" data-name="two">
-            <img class="front-face" src="./имж карточки/2ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-      
-          <div class="memory-card" data-ind="1" data-name="three">
-            <img class="front-face" src="./имж карточки/3ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind="2" data-name="three">
-            <img class="front-face" src="./имж карточки/3ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-      
-          <div class="memory-card" data-ind="1" data-name="four">
-            <img class="front-face" src="./имж карточки/4ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind="2" data-name="four">
-            <img class="front-face" src="./имж карточки/4ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-      
-          <div class="memory-card" data-ind="1" data-name="five">
-            <img class="front-face" src="./имж карточки/5ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind = "2" data-name="five">
-            <img class="front-face" src="./имж карточки/5ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-      
-          <div class="memory-card" data-ind="1" data-name="six">
-            <img class="front-face" src="./имж карточки/6ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-          <div class="memory-card" data-ind="2" data-name="six">
-            <img class="front-face" src="./имж карточки/6ю1.jpg"/>
-            <img class="back-face" src="./имж карточки/back-face-img.jpg"/>
-          </div>
-        
-      
-      </section>
+    </section>
+
+      <aside class="control">
+        <button class="start">Start</button>
+        <select class="select" name="" id="select-level">
+          <option value="easy">Easy</option>
+          <option value="middle">Middle</option>
+          <option value="advance">Advance</option>
+        </select>
+      </aside>
+
+  </div>
+
+       
+
+     
+
+    
     
 </body>
 </html>
