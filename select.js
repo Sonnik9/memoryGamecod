@@ -9,27 +9,43 @@ function selectLevel() {
             easyStart();
             cards = document.querySelectorAll('.memory-card');
             restartGame();
+            countForFinish = 0;
+            scoreResult.innerHTML = '';
+            flagE = true;
+            flagM = false;
+            flagA = false;
             
         break;
 
         case 'middle':  
             cardsContainer.innerHTML = {};
-            cardsContainer.style.width = 620 + 'px';
-            cardsContainer.style.height = 380 + 'px';
-            controlContainer.style.height = 380 + 'px';        
+            cardsContainer.style.width = '100%';
+            cardsContainer.style.height = '60%';
+            // controlContainer.style.height = 380 + 'px';        
             middleStart(); 
             cards = document.querySelectorAll('.memory-card');
             restartGame();
+            countForFinish = 0;
+            scoreResult.innerHTML = '';
+            flagM = true;
+            flagE = false;
+            flagA = false;
         break;
 
         case 'advance': 
             cardsContainer.innerHTML ={};
-            cardsContainer.style.width = 620 + 'px';
-            cardsContainer.style.height = 420 + 'px';
-            controlContainer.style.height = 420 + 'px';         
+            cardsContainer.style.width = '100%';
+            cardsContainer.style.height = '70%';
+            // controlContainer.style.height = 420 + 'px';         
             advanceStart();
             cards = document.querySelectorAll('.memory-card'); 
-            restartGame();         
+            restartGame();
+            
+            countForFinish = 0;
+            scoreResult.innerHTML = '';
+            flagA = true;
+            flagE = false;
+            flagM = false;       
         break;
     }  
    

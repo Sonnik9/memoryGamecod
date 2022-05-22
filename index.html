@@ -12,24 +12,30 @@
     <script defer src="./advanceLevel.js"></script>
     <script defer src="./main.js"></script>    
     <script defer src="./select.js"></script>
+    <script defer src="./timer.js"></script>
   
 </head>
 
 <body>
   <div class="memo-container">
 
+    <aside class="control">
+      <button class="start">New Game</button>
+      <select class="select" name="" id="select-level">
+        <option value="easy">Easy</option>
+        <option value="middle">Middle</option>
+        <option value="advance">Advance</option>
+      </select>
+      <div class="clock"><p class="time-item">0</p></div>
+    </aside>
+
     <section class="memory-game">
 
     </section>
 
-      <aside class="control">
-        <button class="start">Start</button>
-        <select class="select" name="" id="select-level">
-          <option value="easy">Easy</option>
-          <option value="middle">Middle</option>
-          <option value="advance">Advance</option>
-        </select>
-      </aside>
+    <div class="score">Score: <p class="score-result"></p></div>
+
+     
 
   </div>
 

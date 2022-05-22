@@ -1,9 +1,18 @@
 let countCard = 0;
+let counterForResult = 0;
+let countForFinish = 0;
+
+let flagM = false;
+let flagA = false;
 let flagCard = false;
 let firstCard;
 let secondCard;
 
+let timerId;
+let timeItem = document.querySelector('.time-item');
+
 let cards = document.querySelectorAll('.memory-card');
+let scoreResult = document.querySelector('.score-result');
 let startButton = document.querySelector('.start');
 startButton.addEventListener('click', restartGame);
 
@@ -18,6 +27,7 @@ function shuffle() {
 shuffle();
       
 function flipCard() { 
+  counterForResult++;
   countCard++;
  
   if(countCard == 1) {
@@ -32,6 +42,7 @@ function flipCard() {
     if (firstCard.dataset.name == secondCard.dataset.name) {
       resetBoard();
       flagCard = true;
+      countForFinish++;
     }
     else {
       flagCard = false;
@@ -52,7 +63,17 @@ function flipCard() {
     firstCard = this;
     countCard = 1;
     flagCard = false;
-  }    
+  } 
+  
+  if((countForFinish == 6 && flagE == true) || (countForFinish == 12 && flagM == true) || (countForFinish == 18 && flagA == true)) {
+    clearInterval(timerId);
+    scoreResult.innerHTML = 'Your score:' + '   ' + sec + '  ' + 'sec' + '  ' + counterForResult + '  ' + 'clicks';
+
+  }
+
+  else if (countForFinish == 12 && flagM == true) {
+
+  }
 }
 
 function resetBoard() {
@@ -72,10 +93,16 @@ secondCard.classList.remove('flip');
   
 function restartGame() {
     countCard = 0;
+    counterForResult = 0;
+    countForFinish = 0;
     flagCard = false;
     cards.forEach(card => card.addEventListener('click', flipCard, { once: true }));
     cards.forEach(card => card.classList.remove('flip'));
     shuffle();
+    scoreResult.innerHTML =  '';   
+    timeItem.innerHTML = '';
+    clearInterval(timerId);
+    timeKeeper();
 }
 
 
